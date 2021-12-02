@@ -23,10 +23,10 @@ class ChallengeSolutionViewModel(private val codeDownloaderManager: CodeDownload
             val firstChallenge = item?.challenge?.firstOrNull()
             val secondChallenge = item?.challenge?.getOrNull(1)
             firstChallenge?.let {
-                _firstChallengeCode.postValue(codeDownloaderManager.getCodeFromUrl("adc10185fcbf10b281287f0de56c78a1/raw/c620f4ec2c7411cad300917e655c3c9119ea6ae3/AoC%2520day%25201"))
+                _firstChallengeCode.postValue(codeDownloaderManager.getCodeFromUrl(it.responseUrl))
             }
             secondChallenge?.let {
-                _secondChallengeCode.postValue(codeDownloaderManager.getCodeFromUrl("adc10185fcbf10b281287f0de56c78a1/raw/c620f4ec2c7411cad300917e655c3c9119ea6ae3/AoC%2520day%25201"))
+                _secondChallengeCode.postValue(codeDownloaderManager.getCodeFromUrl(it.responseUrl))
             }
 
         }

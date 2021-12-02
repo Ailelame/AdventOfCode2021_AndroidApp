@@ -61,10 +61,10 @@ class AllChallengesViewModel(private val appContext: Context) : ViewModel() {
 
 
         return when {
-            challengeNumber == 1 && part == 1 -> Challenge(Challenge1Part1.resolve(firstDayInput), "url")
-            challengeNumber == 1 && part == 2 -> Challenge(Challenge1Part2.resolve(firstDayInput), "")
-            challengeNumber == 2 && part == 1 -> Challenge(Challenge2Part1.resolve(secondDayInput), "url")
-            challengeNumber == 2 && part == 2 -> Challenge(Challenge2Part2.resolve(secondDayInput), "url")
+            challengeNumber == 1 && part == 1 -> Challenge(Challenge1Part1.resolve(firstDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge1Part1.kt")
+            challengeNumber == 1 && part == 2 -> Challenge(Challenge1Part2.resolve(firstDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge1Part2.kt")
+            challengeNumber == 2 && part == 1 -> Challenge(Challenge2Part1.resolve(secondDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge2Part1.kt")
+            challengeNumber == 2 && part == 2 -> Challenge(Challenge2Part2.resolve(secondDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge2Part2.kt")
 
             else -> null
         }

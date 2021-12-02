@@ -44,7 +44,7 @@ class ChallengeSolutionFragment :
             )
         }
         viewModel.secondChallengeCode.observe(viewLifecycleOwner) {
-            binding.solutionInput1.bindSyntaxHighlighter(
+            binding.solutionInput2.bindSyntaxHighlighter(
                 formattedSourceCode = it,
                 language = "kotlin",
                 showLineNumbers = true

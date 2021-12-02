@@ -18,7 +18,7 @@ val remoteModule = module {
     single {
         Retrofit.Builder()
             .addConverterFactory(ScalarsConverterFactory.create())
-            .baseUrl("https://gist.githubusercontent.com/Ailelame/")
+            .baseUrl("https://raw.githubusercontent.com/Ailelame/")
             .client(get())
             .build()
 
