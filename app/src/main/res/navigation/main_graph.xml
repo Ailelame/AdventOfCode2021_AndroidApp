@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/allChallengesFragment">
+
+    <fragment
+        android:id="@+id/allChallengesFragment"
+        android:name="com.jetdev.adventofcode.screen.allchallenges.AllChallengesFragment"
+        android:label="AllChallengesFragment"
+        tools:layout="@layout/all_challenges_fragment_layout"
+        >
+        <action
+            android:id="@+id/action_allChallengesFragment_to_challengeDetailFragment"
+            app:destination="@id/challengeDetailFragment" />
+        <action
+            android:id="@+id/action_allChallengesFragment_to_challengeSolutionFragment"
+            app:destination="@id/challengeSolutionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/challengeDetailFragment"
+        android:name="com.jetdev.adventofcode.screen.exercice.ChallengeExerciceFragment"
+        android:label="ChallengeDetailFragment"
+        tools:layout="@layout/challenge_exercice_fragment"
+        >
+        <argument
+            android:name="aocChallenge"
+            app:argType="com.jetdev.adventofcode.model.AoCDailyChallenge" />
+    </fragment>
+    <fragment
+        android:id="@+id/challengeSolutionFragment"
+        android:name="com.jetdev.adventofcode.screen.solution.ChallengeSolutionFragment"
+        android:label="ChallengeSolutionFragment" >
+        <argument
+            android:name="aocChallenge"
+            app:argType="com.jetdev.adventofcode.model.AoCDailyChallenge" />
+    </fragment>
+</navigation>
