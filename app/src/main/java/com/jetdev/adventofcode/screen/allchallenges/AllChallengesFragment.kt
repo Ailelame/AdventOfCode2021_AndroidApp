@@ -16,6 +16,8 @@ class AllChallengesFragment :
 
     lateinit var adapter: AllChallengesAdapter
 
+    private var motionLayoutProgress = 0f
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,8 +26,15 @@ class AllChallengesFragment :
         binding.challengeRv.layoutManager = LinearLayoutManager(context)
         binding.challengeRv.adapter = adapter
 
+        binding.motionLayout.progress = motionLayoutProgress
+
         initObservers()
         viewModel.loadData()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        motionLayoutProgress = binding.motionLayout.progress
     }
 
     private fun initObservers() {
