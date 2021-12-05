@@ -12,9 +12,7 @@ import java.util.*
 
 class AllChallengesViewHolder(
     val binding: AllChallengesViewHolderBinding,
-    private val exerciceClickListener: MutableLiveData<Event<AoCDailyChallenge>>,
-    private val solutionClickListener: MutableLiveData<Event<AoCDailyChallenge>>,
-    private val disabledClickListener: MutableLiveData<Event<AoCDailyChallenge>>
+    private val clickListener: MutableLiveData<Event<AllChallengesAdapter.AllChallengeActions>>
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
@@ -29,10 +27,10 @@ class AllChallengesViewHolder(
                     R.color.primaryDarkColor
                 )
             )
-            listOf(binding.solution, binding.exercice).map {
+            listOf(binding.solution, binding.exercise).map {
                 it.disableButton()
                 it.setOnClickListener {
-                    disabledClickListener.postValue(Event(item))
+                    clickListener.postValue(Event(AllChallengesAdapter.AllChallengeActions.BeforeDateClicked()))
                 }
             }
         } else {
@@ -42,18 +40,21 @@ class AllChallengesViewHolder(
                     R.color.secondaryDarkColor
                 )
             )
-            binding.exercice.enableButton()
+            binding.exercise.enableButton()
             if (item.challenge.any { !it?.solution.isNullOrBlank() }) {
                 binding.solution.enableButton()
             } else {
                 binding.solution.disableButton()
             }
 
-            binding.exercice.setOnClickListener {
-                exerciceClickListener.postValue(Event(item))
+            binding.exercise.setOnClickListener {
+                clickListener.postValue(Event(AllChallengesAdapter.AllChallengeActions.ExerciseClicked(item)))
             }
             binding.solution.setOnClickListener {
-                solutionClickListener.postValue(Event(item))
+                if(item.challenge.any { it != null })
+                    clickListener.postValue(Event(AllChallengesAdapter.AllChallengeActions.SolutionClicked(item)))
+                else
+                    clickListener.postValue(Event(AllChallengesAdapter.AllChallengeActions.NoSolutionClicked()))
             }
         }
     }

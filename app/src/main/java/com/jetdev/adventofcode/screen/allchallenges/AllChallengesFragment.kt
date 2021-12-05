@@ -33,31 +33,43 @@ class AllChallengesFragment :
             adapter.setItems(it)
         }
 
-        adapter.exerciceClicked.observe(viewLifecycleOwner) {
-            val challenge = it.contentIfNotHandled
-            challenge?.let {
-                val action =
-                    AllChallengesFragmentDirections.actionAllChallengesFragmentToChallengeDetailFragment(
-                        it
-                    )
-                findNavController().navigate(action)
+        adapter.itemClicked.observe(viewLifecycleOwner) {
+            val action = it.contentIfNotHandled
+            when (action) {
+                is AllChallengesAdapter.AllChallengeActions.SolutionClicked -> {
+                    val navAction =
+                        AllChallengesFragmentDirections.actionAllChallengesFragmentToChallengeSolutionFragment(
+                            action.challenge
+                        )
+                    findNavController().navigate(navAction)
+                }
+                is AllChallengesAdapter.AllChallengeActions.ExerciseClicked -> {
+                    val navAction =
+                        AllChallengesFragmentDirections.actionAllChallengesFragmentToChallengeDetailFragment(
+                            action.challenge
+                        )
+                    findNavController().navigate(navAction)
+                }
+                is AllChallengesAdapter.AllChallengeActions.BeforeDateClicked -> {
+                    Toast.makeText(
+                        context,
+                        "Ne soyez pas si hâtif maître Touque !",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                is AllChallengesAdapter.AllChallengeActions.NoSolutionClicked -> {
+                    Toast.makeText(
+                        context,
+                        "Pas encore de solution ¯\\_(ツ)_/¯",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                else -> {
+                    // Do nothing
+                }
             }
+        }
 
-        }
-        adapter.solutionClicked.observe(viewLifecycleOwner) {
-            val challenge = it.contentIfNotHandled
-            challenge?.let {
-                val action =
-                    AllChallengesFragmentDirections.actionAllChallengesFragmentToChallengeSolutionFragment(it)
-                findNavController().navigate(action)
-            }
-        }
-        adapter.disabledClicked.observe(viewLifecycleOwner) {
-            val challenge = it.contentIfNotHandled
-            challenge?.let {
-               Toast.makeText(context, "Ne soyez pas si hâtif maître Touque !", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
 

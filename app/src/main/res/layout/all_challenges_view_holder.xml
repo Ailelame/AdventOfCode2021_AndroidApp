@@ -27,12 +27,12 @@
 
 
         <TextView
-            android:id="@+id/exercice"
+            android:id="@+id/exercise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             style="@style/AoCButton"
-            android:text="Excercice"
+            android:text="Exercice"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/solution"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -47,8 +47,8 @@
             style="@style/AoCButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/exercice"
-            app:layout_constraintTop_toTopOf="@id/exercice" />
+            app:layout_constraintStart_toEndOf="@id/exercise"
+            app:layout_constraintTop_toTopOf="@id/exercise" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

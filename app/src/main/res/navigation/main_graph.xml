@@ -20,9 +20,9 @@
     </fragment>
     <fragment
         android:id="@+id/challengeDetailFragment"
-        android:name="com.jetdev.adventofcode.screen.exercice.ChallengeExerciceFragment"
+        android:name="com.jetdev.adventofcode.screen.exercise.ChallengeExerciseFragment"
         android:label="ChallengeDetailFragment"
-        tools:layout="@layout/challenge_exercice_fragment"
+        tools:layout="@layout/challenge_exercise_fragment"
         >
         <argument
             android:name="aocChallenge"

@@ -13,14 +13,8 @@ class AllChallengesAdapter : RecyclerView.Adapter<AllChallengesViewHolder>() {
 
     private val list = mutableListOf<AoCDailyChallenge>()
 
-    private val _exerciceClicked = MutableLiveData<Event<AoCDailyChallenge>>()
-    val exerciceClicked : LiveData<Event<AoCDailyChallenge>> = _exerciceClicked
-
-    private val _solutionClicked = MutableLiveData<Event<AoCDailyChallenge>>()
-    val solutionClicked : LiveData<Event<AoCDailyChallenge>> = _solutionClicked
-
-    private val _disabledClicked = MutableLiveData<Event<AoCDailyChallenge>>()
-    val disabledClicked : LiveData<Event<AoCDailyChallenge>> = _disabledClicked
+    private val _itemClicked = MutableLiveData<Event<AllChallengeActions>>()
+    val itemClicked : LiveData<Event<AllChallengeActions>> = _itemClicked
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllChallengesViewHolder {
         val itemBinding = AllChallengesViewHolderBinding.inflate(
@@ -28,7 +22,7 @@ class AllChallengesAdapter : RecyclerView.Adapter<AllChallengesViewHolder>() {
             parent,
             false
         )
-        return AllChallengesViewHolder(itemBinding, _exerciceClicked, _solutionClicked, _disabledClicked)
+        return AllChallengesViewHolder(itemBinding, _itemClicked)
     }
 
     override fun onBindViewHolder(holder: AllChallengesViewHolder, position: Int) {
@@ -46,5 +40,12 @@ class AllChallengesAdapter : RecyclerView.Adapter<AllChallengesViewHolder>() {
         this.list.clear()
         this.list.addAll(newList)
         notifyDataSetChanged()
+    }
+
+    sealed class AllChallengeActions{
+        class ExerciseClicked(val challenge : AoCDailyChallenge) : AllChallengeActions()
+        class SolutionClicked(val challenge : AoCDailyChallenge) : AllChallengeActions()
+        class BeforeDateClicked() : AllChallengeActions()
+        class NoSolutionClicked() : AllChallengeActions()
     }
 }

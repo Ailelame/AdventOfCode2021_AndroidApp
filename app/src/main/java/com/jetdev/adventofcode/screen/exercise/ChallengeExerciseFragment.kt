@@ -1,13 +1,13 @@
-package com.jetdev.adventofcode.screen.exercice
+package com.jetdev.adventofcode.screen.exercise
 
 import android.os.Bundle
 import android.view.View
-import com.jetdev.adventofcode.base.AoCApplication
 import com.jetdev.adventofcode.base.BaseFragment
-import com.jetdev.adventofcode.databinding.ChallengeExerciceFragmentBinding
+import com.jetdev.adventofcode.databinding.ChallengeExerciseFragmentBinding
 import com.jetdev.adventofcode.model.AoCDailyChallenge
 
-class ChallengeExerciceFragment : BaseFragment<ChallengeExerciceFragmentBinding>(ChallengeExerciceFragmentBinding::inflate) {
+class ChallengeExerciseFragment :
+    BaseFragment<ChallengeExerciseFragmentBinding>(ChallengeExerciseFragmentBinding::inflate) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
