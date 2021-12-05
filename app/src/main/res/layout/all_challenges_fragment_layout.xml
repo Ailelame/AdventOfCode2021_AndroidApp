@@ -7,13 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/primaryDarkColor"
     app:layoutDescription="@xml/all_challenges_fragment_layout_scene">
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/header_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="?attr/actionBarSize" />
-
 
     <TextView
         android:id="@+id/aoc_header_ascii_art"
@@ -56,6 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/aoc_header_title"
         android:layout_width="match_parent"
@@ -67,11 +61,19 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/header_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="?attr/actionBarSize" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/challenge_rv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingBottom="?attr/actionBarSize"
         app:layout_constraintTop_toBottomOf="@id/aoc_header_ascii_art"
         tools:listitem="@layout/all_challenges_view_holder" />
 
