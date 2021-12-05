@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.4354166666666667" />
-        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/all_challenges_fragment_layout.xml" value="0.18" />
+        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/all_challenges_fragment_layout.xml" value="0.1" />
+        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/all_challenges_view_holder.xml" value="0.29347826086956524" />
+        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/challenge_exercice_fragment.xml" value="0.29347826086956524" />
+        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/challenge_solution_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Developpement/AndroidProject/AdventOfCode2021_AndroidApp/app/src/main/res/layout/custom_syntax_highlighter_wv.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/drawable/background_button.xml" value="0.20462962962962963" />
         <entry key="app/src/main/res/drawable/background_button_diabled.xml" value="0.23425925925925925" />
         <entry key="app/src/main/res/drawable/background_button_disabled.xml" value="0.2037037037037037" />

@@ -56,14 +56,16 @@ class AllChallengesViewModel(private val appContext: Context) : ViewModel() {
         val firstDayInput = appContext.resources.extractListFromRawFolder(R.raw.day1)
         val secondDayInput = appContext.resources.extractListFromRawFolder(R.raw.day2)
         val thirdDayInput = appContext.resources.extractListFromRawFolder(R.raw.day3)
+        val fourthDayInput = appContext.resources.extractListFromRawFolder(R.raw.day4)
 
         return when {
-            challengeNumber == 1 && part == 1 -> Challenge(Challenge1Part1.resolve(firstDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge1Part1.kt")
-            challengeNumber == 1 && part == 2 -> Challenge(Challenge1Part2.resolve(firstDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge1Part2.kt")
-            challengeNumber == 2 && part == 1 -> Challenge(Challenge2Part1.resolve(secondDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge2Part1.kt")
-            challengeNumber == 2 && part == 2 -> Challenge(Challenge2Part2.resolve(secondDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge2Part2.kt")
-            challengeNumber == 3 && part == 1 -> Challenge(Challenge3Part1.resolve(thirdDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge3Part1.kt")
-            challengeNumber == 3 && part == 2 -> Challenge(Challenge3Part2.resolve(thirdDayInput), "AdventOfCode2021_AndroidApp/master/app/src/main/java/com/jetdev/adventofcode/solution/Challenge3Part2.kt")
+            challengeNumber == 1 && part == 1 -> Challenge(Challenge1Part1.resolve(firstDayInput))
+            challengeNumber == 1 && part == 2 -> Challenge(Challenge1Part2.resolve(firstDayInput))
+            challengeNumber == 2 && part == 1 -> Challenge(Challenge2Part1.resolve(secondDayInput))
+            challengeNumber == 2 && part == 2 -> Challenge(Challenge2Part2.resolve(secondDayInput))
+            challengeNumber == 3 && part == 1 -> Challenge(Challenge3Part1.resolve(thirdDayInput))
+            challengeNumber == 3 && part == 2 -> Challenge(Challenge3Part2.resolve(thirdDayInput))
+            challengeNumber == 4 && part == 1 -> Challenge(Challenge4Part1.resolve(fourthDayInput))
 
             else -> null
         }
