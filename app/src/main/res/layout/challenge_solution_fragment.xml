@@ -33,17 +33,6 @@
             app:layout_constraintTop_toBottomOf="@id/answer_title1"
             tools:text="1256" />
 
-
-        <com.jetdev.adventofcode.customview.SyntaxHighlighterWebView
-            android:id="@+id/solution_input1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:minHeight="200dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/answer_input1" />
-
         <TextView
             android:id="@+id/answer_title2"
             style="@style/AoCTitle"
@@ -55,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/solution_input1" />
 
-        <!--  PART 2-->
+
         <TextView
             android:id="@+id/answer_input2"
             android:layout_width="wrap_content"
@@ -66,6 +55,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/answer_title2"
             tools:text="1256" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/challenge1_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/solution_input1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/solution_input1"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/lottie_loader" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/challenge2_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/solution_input2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/solution_input2"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/lottie_loader" />
+
+        <!--  PART 2-->
+        <com.jetdev.adventofcode.customview.SyntaxHighlighterWebView
+            android:id="@+id/solution_input1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:minHeight="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/answer_input1" />
 
 
         <com.jetdev.adventofcode.customview.SyntaxHighlighterWebView

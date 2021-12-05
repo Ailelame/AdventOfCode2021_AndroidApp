@@ -53,6 +53,8 @@ dependencies {
     def view_binding = "7.0.3"
     def joda_time = "2.10.13"
     def retrofit = "2.9.0"
+    def lottie = "4.2.2"
+
 
     // Android
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -79,6 +81,7 @@ dependencies {
 
     // Other
     implementation "joda-time:joda-time:$joda_time"
+    implementation "com.airbnb.android:lottie:$lottie"
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"

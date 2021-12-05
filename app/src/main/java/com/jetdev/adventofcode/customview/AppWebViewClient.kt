@@ -13,7 +13,7 @@ import timber.log.Timber
  * - https://stackoverflow.com/questions/52765057/sample-usage-of-webviewcompat
  * - https://stackoverflow.com/questions/57449900/letting-webview-on-android-work-with-prefers-color-scheme-dark?rq=1
  */
-class AppWebViewClient : WebViewClient() {
+class AppWebViewClient(private val stopLoader : (()->Unit)?) : WebViewClient( ) {
 
 
     override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
@@ -27,6 +27,9 @@ class AppWebViewClient : WebViewClient() {
 
     override fun onPageFinished(view: WebView?, url: String?) {
         Timber.d("onPageFinished")
+        stopLoader?.let {
+            it.invoke()
+        }
         super.onPageFinished(view, url)
     }
 
